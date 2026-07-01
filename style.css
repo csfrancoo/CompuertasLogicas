@@ -1,0 +1,172 @@
+/* =========================
+   ESTILO GENERAL
+========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg, #f2f2f2, #bdbdbd, #6e6e6e);
+    color: #111;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+    background: rgba(30,30,30,0.9);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-bottom: 3px solid #999;
+}
+
+header h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+/* =========================
+   NAV
+========================= */
+
+nav{
+    background: rgba(60,60,60,0.95);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 12px;
+    gap: 10px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+nav a:hover{
+    background: #d9d9d9;
+    color: black;
+}
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card{
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+    margin: 20px auto;
+    padding: 20px;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    line-height: 1.4;
+    text-align: justify;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+/* =========================
+   TABLAS
+========================= */
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td{
+    border: 1px solid #444;
+    padding: 10px;
+    text-align: center;
+}
+
+th{
+    background: #444;
+    color: white;
+}
+
+/* =========================
+   BOTONES
+========================= */
+
+button{
+    background: linear-gradient(90deg, #777, #ddd);
+    border: none;
+    padding: 10px 18px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background: linear-gradient(90deg, #999, #fff);
+}
+
+/* =========================
+   LAMPARITA
+========================= */
+
+#lamparita{
+    font-size: 50px;
+    margin: 15px 0;
+}
+
+/* =========================
+   TEXTO RESULTADO
+========================= */
+
+#resultado{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: rgba(30,30,30,0.9);
+    color: white;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px){
+
+    header h1{
+        font-size: 28px;
+    }
+
+    nav{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button{
+        width: 100%;
+    }
+}

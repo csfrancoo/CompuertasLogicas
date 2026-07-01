@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuerta XNOR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Compuerta Lógica XNOR</h1>
+        <p>La salida es verdadera cuando las dos entradas son iguales.</p>
+    </header>
+
+    <!-- MENÚ -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="and.html">AND</a>
+        <a href="or.html">OR</a>
+        <a href="not.html">NOT</a>
+        <a href="nand.html">NAND</a>
+        <a href="nor.html">NOR</a>
+        <a href="xor.html">XOR</a>
+        <a href="xnor.html">XNOR</a>
+        <a href="actividad.html">Actividad</a>
+    </nav>
+
+    <!-- EXPLICACIÓN -->
+    <section class="card">
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p>
+            La compuerta <strong>XNOR</strong> (OR Exclusiva Negada) es la inversa
+            de la compuerta XOR.
+        </p>
+
+        <ul>
+            <li>Si las dos entradas son iguales (0-0 o 1-1), la salida es 1.</li>
+            <li>Si las entradas son diferentes (0-1 o 1-0), la salida es 0.</li>
+        </ul>
+
+    </section>
+
+    <!-- TABLA DE VERDAD -->
+    <section class="card">
+
+        <h2>Tabla de verdad</h2>
+
+        <table>
+
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>Salida</th>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>⚫</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>⚫</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>💡</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="card">
+
+        <h2>Probá la compuerta</h2>
+
+        <label>Entrada A:</label>
+        <select id="a">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <label>Entrada B:</label>
+        <select id="b">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="probarXNOR()">Probar</button>
+
+        <h2 id="lamparita">⚫</h2>
+
+        <p id="resultado"></p>
+
+    </section>
+
+    <!-- EJEMPLO -->
+    <section class="card">
+
+        <h2>Ejemplo cotidiano</h2>
+
+        <p>
+            Imaginá un sistema de seguridad que solo permite abrir una puerta
+            cuando las dos llaves están en la misma posición.
+            Si una está activada y la otra no, la puerta permanece cerrada.
+        </p>
+
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <section class="card" style="text-align:center;">
+
+        <a href="xor.html">
+            <button>⬅ XOR</button>
+        </a>
+
+        <a href="actividad.html">
+            <button>Ir a la Actividad ➜</button>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>Compuertas Lógicas | Compuerta XNOR</p>
+    </footer>
+
+    <script>
+
+        function probarXNOR() {
+
+            let A = Number(document.getElementById("a").value);
+            let B = Number(document.getElementById("b").value);
+
+            // XNOR = verdadero cuando A y B son iguales
+            let salida = (A === B);
+
+            if (salida) {
+
+                document.getElementById("lamparita").innerHTML = "💡";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está ENCENDIDA porque las entradas son iguales.";
+
+            } else {
+
+                document.getElementById("lamparita").innerHTML = "⚫";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está APAGADA porque las entradas son diferentes.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuerta OR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Compuerta Lógica OR</h1>
+        <p>La salida es verdadera cuando al menos una de las entradas es verdadera.</p>
+    </header>
+
+    <!-- MENÚ -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="and.html">AND</a>
+        <a href="or.html">OR</a>
+        <a href="not.html">NOT</a>
+        <a href="nand.html">NAND</a>
+        <a href="nor.html">NOR</a>
+        <a href="xor.html">XOR</a>
+        <a href="xnor.html">XNOR</a>
+        <a href="actividad.html">Actividad</a>
+    </nav>
+
+    <!-- EXPLICACIÓN -->
+    <section class="card">
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p>
+            La compuerta <strong>OR</strong> enciende la salida cuando
+            <strong>al menos una</strong> de las entradas vale 1.
+        </p>
+
+        <p>
+            Solo permanece apagada cuando las dos entradas son 0.
+        </p>
+
+    </section>
+
+    <!-- TABLA -->
+    <section class="card">
+
+        <h2>Tabla de verdad</h2>
+
+        <table>
+
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>Salida</th>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>⚫</td>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>💡</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="card">
+
+        <h2>Probá la compuerta</h2>
+
+        <p>Seleccioná el valor de las entradas.</p>
+
+        <label>Entrada A:</label>
+        <select id="a">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <label>Entrada B:</label>
+        <select id="b">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="probarOR()">Probar</button>
+
+        <h2 id="lamparita">⚫</h2>
+
+        <p id="resultado"></p>
+
+    </section>
+
+    <!-- EJEMPLO -->
+    <section class="card">
+
+        <h2>Ejemplo cotidiano</h2>
+
+        <p>
+            Imaginá una habitación con <strong>dos interruptores en paralelo</strong>.
+            Si encendés cualquiera de los dos, la lamparita se prende.
+            Solo permanece apagada cuando ambos interruptores están apagados.
+        </p>
+
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <section class="card" style="text-align:center;">
+
+        <a href="and.html">
+            <button>⬅ AND</button>
+        </a>
+
+        <a href="not.html">
+            <button>Siguiente ➜</button>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>Compuertas Lógicas | Compuerta OR</p>
+    </footer>
+
+    <script>
+        function probarOR() {
+
+            let A = Number(document.getElementById("a").value);
+            let B = Number(document.getElementById("b").value);
+
+            let salida = A || B;
+
+            if (salida == 1) {
+
+                document.getElementById("lamparita").innerHTML = "💡";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está ENCENDIDA porque al menos una entrada vale 1.";
+
+            } else {
+
+                document.getElementById("lamparita").innerHTML = "⚫";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está APAGADA porque A=0 y B=0.";
+
+            }
+
+        }
+    </script>
+
+</body>
+
+</html>

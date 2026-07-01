@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuerta NOT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Compuerta Lógica NOT</h1>
+        <p>La compuerta NOT invierte el valor de la entrada.</p>
+    </header>
+
+    <!-- MENÚ -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="and.html">AND</a>
+        <a href="or.html">OR</a>
+        <a href="not.html">NOT</a>
+        <a href="nand.html">NAND</a>
+        <a href="nor.html">NOR</a>
+        <a href="xor.html">XOR</a>
+        <a href="xnor.html">XNOR</a>
+        <a href="actividad.html">Actividad</a>
+    </nav>
+
+    <!-- EXPLICACIÓN -->
+    <section class="card">
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p>
+            La compuerta <strong>NOT</strong> tiene una sola entrada y una sola
+            salida. Su función es <strong>invertir</strong> el valor recibido.
+        </p>
+
+        <ul>
+            <li>Si entra <strong>0</strong>, la salida será <strong>1</strong>.</li>
+            <li>Si entra <strong>1</strong>, la salida será <strong>0</strong>.</li>
+        </ul>
+
+    </section>
+
+    <!-- TABLA DE VERDAD -->
+    <section class="card">
+
+        <h2>Tabla de verdad</h2>
+
+        <table>
+
+            <tr>
+                <th>Entrada A</th>
+                <th>Salida</th>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>⚫</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="card">
+
+        <h2>Probá la compuerta</h2>
+
+        <label>Entrada:</label>
+
+        <select id="a">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="probarNOT()">Probar</button>
+
+        <h2 id="lamparita">⚫</h2>
+
+        <p id="resultado"></p>
+
+    </section>
+
+    <!-- EJEMPLO -->
+    <section class="card">
+
+        <h2>Ejemplo cotidiano</h2>
+
+        <p>
+            Imaginá un sensor de luz automática.
+            Cuando hay luz (1), la lámpara permanece apagada (0).
+            Cuando oscurece (0), la lámpara se enciende (1).
+        </p>
+
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <section class="card" style="text-align:center;">
+
+        <a href="or.html">
+            <button>⬅ OR</button>
+        </a>
+
+        <a href="nand.html">
+            <button>Siguiente ➜</button>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>Compuertas Lógicas | Compuerta NOT</p>
+    </footer>
+
+    <script>
+
+        function probarNOT() {
+
+            let A = Number(document.getElementById("a").value);
+
+            let salida = !A;
+
+            if (salida) {
+
+                document.getElementById("lamparita").innerHTML = "💡";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está ENCENDIDA porque la entrada es 0 y la compuerta NOT invierte el valor.";
+
+            } else {
+
+                document.getElementById("lamparita").innerHTML = "⚫";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está APAGADA porque la entrada es 1 y la compuerta NOT invierte el valor.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad - Compuertas Lógicas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Actividad Final</h1>
+        <p>Respondé las preguntas y comprobá cuánto aprendiste.</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="and.html">AND</a>
+        <a href="or.html">OR</a>
+        <a href="not.html">NOT</a>
+        <a href="nand.html">NAND</a>
+        <a href="nor.html">NOR</a>
+        <a href="xor.html">XOR</a>
+        <a href="xnor.html">XNOR</a>
+        <a href="actividad.html">Actividad</a>
+    </nav>
+
+    <section class="card">
+
+        <h2>Cuestionario</h2>
+
+        <!-- Pregunta 1 -->
+        <h3>1. ¿Cuándo se enciende la lamparita en una compuerta AND?</h3>
+
+        <input type="radio" name="p1" value="0"> Cuando una entrada vale 1.<br>
+        <input type="radio" name="p1" value="1"> Cuando A=1 y B=1.<br>
+        <input type="radio" name="p1" value="0"> Siempre.<br><br>
+
+        <!-- Pregunta 2 -->
+        <h3>2. ¿Cuándo se enciende una compuerta OR?</h3>
+
+        <input type="radio" name="p2" value="1"> Cuando al menos una entrada es 1.<br>
+        <input type="radio" name="p2" value="0"> Solo cuando ambas son 1.<br>
+        <input type="radio" name="p2" value="0"> Nunca.<br><br>
+
+        <!-- Pregunta 3 -->
+        <h3>3. ¿Qué hace una compuerta NOT?</h3>
+
+        <input type="radio" name="p3" value="1"> Invierte la entrada.<br>
+        <input type="radio" name="p3" value="0"> Suma las entradas.<br>
+        <input type="radio" name="p3" value="0"> Multiplica las entradas.<br><br>
+
+        <!-- Pregunta 4 -->
+        <h3>4. ¿Qué compuerta es la inversa de AND?</h3>
+
+        <input type="radio" name="p4" value="1"> NAND.<br>
+        <input type="radio" name="p4" value="0"> XOR.<br>
+        <input type="radio" name="p4" value="0"> OR.<br><br>
+
+        <!-- Pregunta 5 -->
+        <h3>5. ¿Cuándo se enciende una compuerta XOR?</h3>
+
+        <input type="radio" name="p5" value="1"> Cuando las entradas son diferentes.<br>
+        <input type="radio" name="p5" value="0"> Cuando ambas son 1.<br>
+        <input type="radio" name="p5" value="0"> Cuando ambas son 0.<br><br>
+
+        <button onclick="corregir()">Corregir actividad</button>
+
+        <h2 id="nota"></h2>
+        <p id="mensaje"></p>
+
+    </section>
+
+    <section class="card" style="text-align:center;">
+
+        <a href="index.html">
+            <button>🏠 Volver al Inicio</button>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>Proyecto educativo | Compuertas Lógicas</p>
+    </footer>
+
+    <script>
+
+        function corregir() {
+
+            let puntos = 0;
+
+            const respuestas = [
+                document.querySelector('input[name="p1"]:checked'),
+                document.querySelector('input[name="p2"]:checked'),
+                document.querySelector('input[name="p3"]:checked'),
+                document.querySelector('input[name="p4"]:checked'),
+                document.querySelector('input[name="p5"]:checked')
+            ];
+
+            for (let i = 0; i < respuestas.length; i++) {
+
+                if (respuestas[i] == null) {
+
+                    alert("Respondé todas las preguntas antes de corregir.");
+                    return;
+
+                }
+
+                puntos += Number(respuestas[i].value);
+
+            }
+
+            document.getElementById("nota").innerHTML =
+                "Puntaje: " + puntos + " / 5";
+
+            if (puntos == 5) {
+
+                document.getElementById("mensaje").innerHTML =
+                    "🏆 ¡Excelente! Conocés muy bien las compuertas lógicas.";
+
+            } else if (puntos >= 3) {
+
+                document.getElementById("mensaje").innerHTML =
+                    "👍 ¡Muy bien! Solo te falta repasar algunos conceptos.";
+
+            } else {
+
+                document.getElementById("mensaje").innerHTML =
+                    "📚 SeguÍ estudiando las compuertas y volvé a intentarlo.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compuerta NAND</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header>
+        <h1>Compuerta Lógica NAND</h1>
+        <p>La compuerta NAND es la negación de la compuerta AND.</p>
+    </header>
+
+    <!-- MENÚ -->
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="and.html">AND</a>
+        <a href="or.html">OR</a>
+        <a href="not.html">NOT</a>
+        <a href="nand.html">NAND</a>
+        <a href="nor.html">NOR</a>
+        <a href="xor.html">XOR</a>
+        <a href="xnor.html">XNOR</a>
+        <a href="actividad.html">Actividad</a>
+    </nav>
+
+    <!-- EXPLICACIÓN -->
+    <section class="card">
+
+        <h2>¿Cómo funciona?</h2>
+
+        <p>
+            La compuerta <strong>NAND</strong> realiza primero la operación
+            <strong>AND</strong> y luego invierte el resultado.
+        </p>
+
+        <ul>
+            <li>Si A=1 y B=1, la salida será 0.</li>
+            <li>En cualquier otro caso, la salida será 1.</li>
+        </ul>
+
+    </section>
+
+    <!-- TABLA -->
+    <section class="card">
+
+        <h2>Tabla de verdad</h2>
+
+        <table>
+
+            <tr>
+                <th>A</th>
+                <th>B</th>
+                <th>Salida</th>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>💡</td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>⚫</td>
+            </tr>
+
+        </table>
+
+    </section>
+
+    <!-- SIMULADOR -->
+    <section class="card">
+
+        <h2>Probá la compuerta</h2>
+
+        <label>Entrada A:</label>
+
+        <select id="a">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <label>Entrada B:</label>
+
+        <select id="b">
+            <option value="0">0</option>
+            <option value="1">1</option>
+        </select>
+
+        <br><br>
+
+        <button onclick="probarNAND()">Probar</button>
+
+        <h2 id="lamparita">⚫</h2>
+
+        <p id="resultado"></p>
+
+    </section>
+
+    <!-- EJEMPLO -->
+    <section class="card">
+
+        <h2>Ejemplo cotidiano</h2>
+
+        <p>
+            Pensá en una alarma que permanece encendida casi siempre.
+            Solo se apaga cuando los dos sensores detectan una condición
+            al mismo tiempo.
+        </p>
+
+    </section>
+
+    <!-- NAVEGACIÓN -->
+    <section class="card" style="text-align:center;">
+
+        <a href="not.html">
+            <button>⬅ NOT</button>
+        </a>
+
+        <a href="nor.html">
+            <button>Siguiente ➜</button>
+        </a>
+
+    </section>
+
+    <footer>
+        <p>Compuertas Lógicas | Compuerta NAND</p>
+    </footer>
+
+    <script>
+
+        function probarNAND() {
+
+            let A = Number(document.getElementById("a").value);
+            let B = Number(document.getElementById("b").value);
+
+            let salida = !(A && B);
+
+            if (salida) {
+
+                document.getElementById("lamparita").innerHTML = "💡";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está ENCENDIDA porque la salida de la compuerta NAND es 1.";
+
+            } else {
+
+                document.getElementById("lamparita").innerHTML = "⚫";
+                document.getElementById("resultado").innerHTML =
+                    "La lamparita está APAGADA porque A=1 y B=1, por lo que la salida es 0.";
+
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>
